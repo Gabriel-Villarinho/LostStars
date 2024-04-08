@@ -1,5 +1,7 @@
 const alice = document.querySelector('.alice');
 const espinho = document.querySelector('.espinho')
+const pontos = document.querySelector('.pontos')
+let contar = 0
 
 const pulo = () => {
     alice.classList.add('pulo');
@@ -17,9 +19,9 @@ const loop = setInterval(() => {
     const espinhoPosition = espinho.offsetLeft
     const alicePosition = +window.getComputedStyle(alice).bottom.replace('px', '')
 
-    //console.log(alicePosition)
+    console.log(alicePosition)
 
-    //console.log(espinhoPosition)
+    console.log(espinhoPosition)
 
     if(espinhoPosition <= 120 && espinhoPosition > 0 && alicePosition < 80){
         espinho.style.animation = 'none'
@@ -32,8 +34,15 @@ const loop = setInterval(() => {
         alice.style.width = '75px'
         alice.style.marginLeft = '50px'
 
+
+
         clearInterval(loop)
     }
+    
+    contar++
+    pontos.innerHTML = `Score: ${contar}`
+
 }, 10)
+
 
 document.addEventListener('keydown', pulo);
