@@ -6,12 +6,17 @@
 
 .jogo-base {
     width: 100%;
-    height: 500px;
-    border-bottom: 15px solid rgb(204, 87, 19);
+    height: 599px;
+    border-bottom: 20px solid rgb(228, 84, 1);
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+    transition: 3s ease-in-out;
 }
+
+.jogo-base.ativo {
+    border-bottom-color: rgb(71, 17, 71);
+  }
 
 .espinho {
     position: absolute;
@@ -32,9 +37,12 @@
 
 .alice {
     position: absolute;
+    left: 10px;
     bottom: 0px;
     width: 70px;
 }
+
+
 .pulo{
     animation: pulo 500ms ease-out;
 }
@@ -45,15 +53,15 @@
     }
 
     40% {
-        bottom: 180px;
+        bottom: 230px;
     }
 
     50% {
-        bottom: 180px;
+        bottom: 230px;
     }
 
     60% {
-        bottom: 180px;
+        bottom: 230px;
     }
 
     100% {
@@ -62,18 +70,56 @@
 }
 
 
-.nuvem{
+.planeta{
     position: absolute;
-    width: 550px;
-    animation: nuvem-animation 10s infinite linear;
+    bottom: 360px;
+    width: 150px;
+    transition: 1s ease-in-out;
+    animation: planeta-animation 15s infinite linear;
 }
 
-@keyframes nuvem-animation{
+@keyframes planeta-animation{
     from{
-        right:-550px;
+        right:-120px;
     }
 
     to{
         right:100%;
     }
+}
+
+
+html {
+    min-height: 100%;
+    background-image: url(IMG/fundo1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-image 3s ease-in-out;
+ }
+
+ html.change-bg {
+    min-height: 100%;
+    background-image: url(IMG/fundo2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+ 
+
+.pontos{
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    left: 5px; 
+    padding: 5px 10px;
+    background-color: #ffffff;
+    color: #333333;
+    border: 2px solid #333333;
+    border-radius: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
