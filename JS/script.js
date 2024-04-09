@@ -47,10 +47,8 @@ const loop = setInterval(() => {
         alice.style.marginLeft = '50px'
 
         // acha um jeito ai de fazer q quando a alice morrer abrir o fimjogo.html
-        abrirOutraAba(url2)
-
-
         clearInterval(loop)
+        abrirOutraAba(url2)
     }
     
     contar++

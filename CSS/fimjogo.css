@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('IMG/estrelas.jpg');
+    background-size: cover; /* Para cobrir todo o espaço do body */
+    background-position: center; /* Centralizar a imagem */
+    background-repeat: no-repeat; /* Evitar a repetição da imagem */
+}
+
+.game-over {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Define a cor das letras como branca */
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+.restart-button {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    background-color: #ff9900; /* Cor laranja */
+    color: white; /* Letras brancas */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    animation: button-animation 2s infinite alternate-reverse; /* Animação do botão */
+}
+
+.restart-button:hover {
+    background-color: #ff6600; /* Cor laranja mais escura ao passar o mouse */
+}
+
+@keyframes button-animation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+a {
+    color: white; /* Cor das letras brancas */
+    text-decoration: none; /* Remove sublinhado dos links */
+    margin-top: 20px; /* Espaçamento superior */
+    font-size: 1.2rem;
+}
