@@ -91,10 +91,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000);
       });
 
-btn.addEventListener('click', () => {
+/*btn.addEventListener('click', () => {
   abrirOutraAba(url)
-})
+})*/
 
-restartbtn.addEventListener('click', () => {
+/*restartbtn.addEventListener('click', () => {
   abrirOutraAba(url)
-})
+})*/
