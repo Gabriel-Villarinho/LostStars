@@ -76,6 +76,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+          espinho.style.opacity = 0;
+          setTimeout(function() {
+            espinho.src = 'CSS/IMG/espinho2.png'; // 
+            espinho.style.opacity = 1; 
+          }, 1000); 
+        }, 5000); 
+      });
+
+    document.addEventListener('DOMContentLoaded', function() {
         setTimeout(function() {
           jogoBase.classList.add('ativo');
         }, 5000);

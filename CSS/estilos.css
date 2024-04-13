@@ -22,6 +22,7 @@
     position: absolute;
     bottom: 0;
     width: 22px;
+    transition: 1s ease;
     animation: espinho-animation 2s infinite linear;
 }
 
