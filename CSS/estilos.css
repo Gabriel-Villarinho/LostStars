@@ -7,7 +7,7 @@
 .jogo-base {
     width: 100%;
     height: 599px;
-    border-bottom: 20px solid rgb(228, 84, 1);
+    border-bottom: 20px solid rgb(212, 126, 76);
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -15,7 +15,7 @@
 }
 
 .jogo-base.ativo {
-    border-bottom-color: rgb(71, 17, 71);
+    border-bottom-color: rgb(104, 32, 104);
   }
 
 .espinho {
@@ -41,6 +41,7 @@
     left: 10px;
     bottom: 0px;
     width: 70px;
+    transition: 0.5s;
 }
 
 

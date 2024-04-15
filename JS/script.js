@@ -3,12 +3,12 @@ const espinho = document.querySelector('.espinho')
 const pontos = document.querySelector('.pontos')
 const planeta = document.querySelector('.planeta');
 const jogoBase = document.querySelector('.jogo-base');
-const btn = document.querySelector('.start-button')
-const restartbtn = document.querySelector('.restart-button')
-const url = './index.html'
-const url2 = './fimjogo.html'
+const btn = document.querySelector('.start-button');
+const restartbtn = document.querySelector('.restart-button');
+const url2 = './fimjogo.html';
 
-let contar = 0
+let pulando = false;
+let contar = 0;
 
 function abrirOutraAba(url){
   const win = window.open(url, '_blank')
@@ -16,14 +16,17 @@ function abrirOutraAba(url){
 }
 
 const pulo = () => {
-    alice.classList.add('pulo');
+    if (!pulando) {
+        pulando = true;
+        alice.classList.add('pulo');
+        alice.src = 'CSS/IMG/alicePulo.png'; // Altera a imagem da Alice para o pulo
 
-    setTimeout(() => {
-
-        alice.classList.remove('pulo');
-
-    }, 500);
-
+        setTimeout(() => {
+            alice.classList.remove('pulo');
+            alice.src = 'CSS/IMG/alice.gif'; // Retorna a imagem da Alice ao estado normal
+            pulando = false;
+        }, 500);
+    }
 }
 
 const loop = setInterval(() => {
@@ -46,15 +49,13 @@ const loop = setInterval(() => {
         alice.style.width = '75px'
         alice.style.marginLeft = '50px'
 
-        // acha um jeito ai de fazer q quando a alice morrer abrir o fimjogo.html
         clearInterval(loop)
         abrirOutraAba(url2)
     }
     
     contar++
     pontos.innerHTML = `Score: ${contar}`
-
-}, 10)
+}, 100);
 
 
 document.addEventListener('keydown', pulo);
@@ -90,11 +91,3 @@ document.addEventListener('DOMContentLoaded', function() {
           jogoBase.classList.add('ativo');
         }, 5000);
       });
-
-/*btn.addEventListener('click', () => {
-  abrirOutraAba(url)
-})*/
-
-/*restartbtn.addEventListener('click', () => {
-  abrirOutraAba(url)
-})*/
